@@ -1,0 +1,508 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>广度优先搜索 · algorithm you should know</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dfs.html" />
+    
+    
+    <link rel="prev" href="binary-search.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../sort-algorithm/">
+            
+                <a href="../sort-algorithm/">
+            
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../sort-algorithm/bubble-sort.html">
+            
+                <a href="../sort-algorithm/bubble-sort.html">
+            
+                    
+                    冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../sort-algorithm/section-sort.html">
+            
+                <a href="../sort-algorithm/section-sort.html">
+            
+                    
+                    选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../sort-algorithm/insertion-sort.html">
+            
+                <a href="../sort-algorithm/insertion-sort.html">
+            
+                    
+                    插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../sort-algorithm/shell-sort.html">
+            
+                <a href="../sort-algorithm/shell-sort.html">
+            
+                    
+                    希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../sort-algorithm/merge-sort.html">
+            
+                <a href="../sort-algorithm/merge-sort.html">
+            
+                    
+                    归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../sort-algorithm/quick-sort.html">
+            
+                <a href="../sort-algorithm/quick-sort.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="README.md">
+            
+                <span>
+            
+                    
+                    搜索算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="linear-search.html">
+            
+                <a href="linear-search.html">
+            
+                    
+                    线性搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="binary-search.html">
+            
+                <a href="binary-search.html">
+            
+                    
+                    二分搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="bfs.html">
+            
+                <a href="bfs.html">
+            
+                    
+                    广度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="dfs.html">
+            
+                <a href="dfs.html">
+            
+                    
+                    深度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="kmp.html">
+            
+                <a href="kmp.html">
+            
+                    
+                    KMP算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../查找算法/README.md">
+            
+                <span>
+            
+                    
+                    动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../查找算法/README.md">
+            
+                <span>
+            
+                    
+                    贪心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >广度优先搜索</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;">&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</h1>
+<p>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x7B97;&#x6CD5;&#xFF08;Breadth-First-Search&#xFF0C;&#x7F29;&#x5199;&#x4E3A;BFS&#xFF09;&#xFF0C;&#x53C8;&#x8BD1;&#x4F5C;&#x5BBD;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#xFF0C;&#x6216;&#x6A2A;&#x5411;&#x4F18;&#x5148;&#x641C;&#x7D22;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x56FE;&#x5F62;&#x641C;&#x7D22;&#x7B97;&#x6CD5;&#x3002;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;BFS&#x662F;&#x4ECE;&#x6839;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#xFF0C;&#x6CBF;&#x7740;&#x6811;&#x7684;&#x5BBD;&#x5EA6;&#x904D;&#x5386;&#x6811;&#x7684;&#x8282;&#x70B9;&#x3002;&#x5982;&#x679C;&#x6240;&#x6709;&#x8282;&#x70B9;&#x5747;&#x88AB;&#x8BBF;&#x95EE;&#xFF0C;&#x5219;&#x7B97;&#x6CD5;&#x4E2D;&#x6B62;&#x3002;</p>
+<p><img src="https://cloud.hunger-valley.com/18-9-27/72521834.jpg" alt=""></p>
+<h2 id="&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;">&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;</h2>
+<p><img src="https://cloud.hunger-valley.com/18-9-27/56853460.jpg" alt=""></p>
+<ol>
+<li>&#x9996;&#x5148;&#x5C06;&#x6839;&#x8282;&#x70B9;&#x653E;&#x5165;&#x961F;&#x5217;&#x4E2D;&#x3002;</li>
+<li>&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x68C0;&#x9A8C;&#x5B83;&#x662F;&#x5426;&#x4E3A;&#x76EE;&#x6807;&#x3002;<ul>
+<li>&#x5982;&#x679C;&#x627E;&#x5230;&#x76EE;&#x6807;&#xFF0C;&#x5219;&#x7ED3;&#x675F;&#x641C;&#x7D22;&#x5E76;&#x56DE;&#x4F20;&#x7ED3;&#x679C;&#x3002;</li>
+<li>&#x5426;&#x5219;&#x5C06;&#x5B83;&#x6240;&#x6709;&#x5C1A;&#x672A;&#x68C0;&#x9A8C;&#x8FC7;&#x7684;&#x76F4;&#x63A5;&#x5B50;&#x8282;&#x70B9;&#x52A0;&#x5165;&#x961F;&#x5217;&#x4E2D;&#x3002;</li>
+</ul>
+</li>
+<li>&#x82E5;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#xFF0C;&#x8868;&#x793A;&#x6574;&#x5F20;&#x56FE;&#x90FD;&#x68C0;&#x67E5;&#x8FC7;&#x4E86;&#x2014;&#x2014;&#x4EA6;&#x5373;&#x56FE;&#x4E2D;&#x6CA1;&#x6709;&#x6B32;&#x641C;&#x7D22;&#x7684;&#x76EE;&#x6807;&#x3002;&#x7ED3;&#x675F;&#x641C;&#x7D22;&#x5E76;&#x56DE;&#x4F20;&#x201C;&#x627E;&#x4E0D;&#x5230;&#x76EE;&#x6807;&#x201D;&#x3002;</li>
+<li>&#x91CD;&#x590D;&#x6B65;&#x9AA4;2&#x3002;</li>
+</ol>
+<h2 id="&#x4EE3;&#x7801;&#x5B9E;&#x73B0;">&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</h2>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+  <span class="hljs-keyword">constructor</span>(data) {
+    <span class="hljs-keyword">this</span>.data = data
+    <span class="hljs-keyword">this</span>.children = []
+    <span class="hljs-keyword">this</span>.parent = <span class="hljs-literal">null</span>
+  }
+
+  insertChild(child) {
+    <span class="hljs-keyword">this</span>.children.push(child)
+    child.setParent(<span class="hljs-keyword">this</span>)
+  }
+
+  setParent(parent) {
+    <span class="hljs-keyword">this</span>.parent = parent
+  }
+
+}
+
+<span class="hljs-comment">/*&#x6784;&#x9020; tree */</span>
+
+<span class="hljs-keyword">let</span> node0 = <span class="hljs-keyword">new</span> Node(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">let</span> node1 = <span class="hljs-keyword">new</span> Node(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">let</span> node2 = <span class="hljs-keyword">new</span> Node(<span class="hljs-number">2</span>)
+<span class="hljs-keyword">let</span> node3 = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">&apos;hello&apos;</span>)
+<span class="hljs-keyword">let</span> node4 = <span class="hljs-keyword">new</span> Node(<span class="hljs-number">4</span>)
+<span class="hljs-keyword">let</span> node5 = <span class="hljs-keyword">new</span> Node(<span class="hljs-number">5</span>)
+
+node0.insertChild(node1)
+node0.insertChild(node2)
+node1.insertChild(node3)
+node1.insertChild(node4)
+node2.insertChild(node5)
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bfsSearch</span>(<span class="hljs-params">root, value</span>) </span>{
+  <span class="hljs-keyword">let</span> list = []
+  <span class="hljs-keyword">let</span> target
+  list.push(root)
+  <span class="hljs-keyword">while</span>(list.length) {
+    target = list.shift()
+    <span class="hljs-keyword">if</span>(target.data === value) <span class="hljs-keyword">return</span> value
+    list.push(...target.children) 
+  }
+
+}
+
+<span class="hljs-built_in">console</span>.log(bfsSearch(node0, <span class="hljs-string">&apos;hello&apos;</span>))
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="binary-search.html" class="navigation navigation-prev " aria-label="Previous page: 二分搜索">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dfs.html" class="navigation navigation-next " aria-label="Next page: 深度优先搜索">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"广度优先搜索","level":"1.3.3","depth":2,"next":{"title":"深度优先搜索","level":"1.3.4","depth":2,"path":"search-algorithm/dfs.md","ref":"search-algorithm/dfs.md","articles":[]},"previous":{"title":"二分搜索","level":"1.3.2","depth":2,"path":"search-algorithm/binary-search.md","ref":"search-algorithm/binary-search.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs-2","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/jirengu/algorithm-you-should-know/tree/master/docs"},"github":{"url":"https://github.com/jirengu/algorithm-you-should-know/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs-2":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"algorithm you should know","language":"zh-cn","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"search-algorithm/bfs.md","mtime":"2018-09-27T06:44:03.662Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-10-25T07:47:58.898Z"},"basePath":"..","book":{"language":"zh-cn"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

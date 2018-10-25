@@ -1,0 +1,576 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>希尔排序 · algorithm you should know</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="merge-sort.html" />
+    
+    
+    <link rel="prev" href="insertion-sort.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="bubble-sort.html">
+            
+                <a href="bubble-sort.html">
+            
+                    
+                    冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="section-sort.html">
+            
+                <a href="section-sort.html">
+            
+                    
+                    选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="insertion-sort.html">
+            
+                <a href="insertion-sort.html">
+            
+                    
+                    插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="shell-sort.html">
+            
+                <a href="shell-sort.html">
+            
+                    
+                    希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="merge-sort.html">
+            
+                <a href="merge-sort.html">
+            
+                    
+                    归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="quick-sort.html">
+            
+                <a href="quick-sort.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../search-algorithm/README.md">
+            
+                <span>
+            
+                    
+                    搜索算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../search-algorithm/linear-search.html">
+            
+                <a href="../search-algorithm/linear-search.html">
+            
+                    
+                    线性搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../search-algorithm/binary-search.html">
+            
+                <a href="../search-algorithm/binary-search.html">
+            
+                    
+                    二分搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../search-algorithm/bfs.html">
+            
+                <a href="../search-algorithm/bfs.html">
+            
+                    
+                    广度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../search-algorithm/dfs.html">
+            
+                <a href="../search-algorithm/dfs.html">
+            
+                    
+                    深度优先搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../search-algorithm/kmp.html">
+            
+                <a href="../search-algorithm/kmp.html">
+            
+                    
+                    KMP算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../查找算法/README.md">
+            
+                <span>
+            
+                    
+                    动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../查找算法/README.md">
+            
+                <span>
+            
+                    
+                    贪心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >希尔排序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E0C;&#x5C14;&#x6392;&#x5E8F;">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</h1>
+<h2 id="&#x539F;&#x7406;&#x89E3;&#x6790;">&#x539F;&#x7406;&#x89E3;&#x6790;</h2>
+<p>&#x5148;&#x5C06;&#x6574;&#x4E2A;&#x5F85;&#x6392;&#x6570;&#x7EC4;&#x5206;&#x5272;&#x6210;&#x82E5;&#x5E72;&#x4E2A;&#x5B50;&#x6570;&#x7EC4;&#xFF08;&#x7531;&#x76F8;&#x9694;&#x67D0;&#x4E2A;&#x201C;&#x589E;&#x91CF;&#x201D;&#x7684;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#x7684;&#xFF09;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x4F9D;&#x6B21;&#x7F29;&#x51CF;&#x589E;&#x91CF;&#x518D;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x5F85;&#x6574;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x57FA;&#x672C;&#x6709;&#x5E8F;&#xFF08;&#x589E;&#x91CF;&#x8DB3;&#x591F;&#x5C0F;&#xFF09;&#x65F6;&#xFF0C;&#x518D;&#x5BF9;&#x5168;&#x4F53;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x3002;&#x56E0;&#x4E3A;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x5728;&#x5143;&#x7D20;&#x57FA;&#x672C;&#x6709;&#x5E8F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6548;&#x7387;&#x662F;&#x5F88;&#x9AD8;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x5728;&#x65F6;&#x95F4;&#x6548;&#x7387;&#x4E0A;&#x8F83;&#x5927;&#x63D0;&#x9AD8;&#x3002;</p>
+<h2 id="&#x8303;&#x4F8B;&#x6F14;&#x793A;">&#x8303;&#x4F8B;&#x6F14;&#x793A;</h2>
+<p>3 1 7 2 5 0 4 6</p>
+<table style="text-align: center">
+  <tr>
+    <td rowspan="2">gap: 4</td>
+    <td style="color:red">3</td>
+    <td style="color:blue">1</td>
+    <td style="color:grey">7</td>
+    <td style="color:pink">2</td>
+    <td style="color:red">5</td>
+    <td style="color:blue">0</td>
+    <td style="color:grey">4</td>
+    <td style="color:pink">6</td>
+  </tr>
+  <tr>
+    <td style="color:red">3</td>
+    <td style="color:blue">0</td>
+    <td style="color:grey">4</td>
+    <td style="color:pink">2</td>
+    <td style="color:red">5</td>
+    <td style="color:blue">1</td>
+    <td style="color:grey">7</td>
+    <td style="color:pink">6</td>
+  </tr>
+
+
+  <tr>
+    <td rowspan="2">gap: 2</td>
+    <td style="color:red">3</td>
+    <td style="color:blue">0</td>
+    <td style="color:red">4</td>
+    <td style="color:blue">2</td>
+    <td style="color:red">5</td>
+    <td style="color:blue">1</td>
+    <td style="color:red">7</td>
+    <td style="color:blue">6</td>
+  </tr>
+  <tr>
+    <td style="color:red">3</td>
+    <td style="color:blue">0</td>
+    <td style="color:red">4</td>
+    <td style="color:blue">1</td>
+    <td style="color:red">5</td>
+    <td style="color:blue">2</td>
+    <td style="color:red">7</td>
+    <td style="color:blue">6</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">gap: 1</td>
+    <td>3</td>
+    <td>0</td>
+    <td>4</td>
+    <td>1</td>
+    <td>5</td>
+    <td>2</td>
+    <td>7</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+  </tr>
+
+</table>
+
+<h2 id="&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;">&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</h2>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shellSort</span>(<span class="hljs-params">arr</span>) </span>{
+  <span class="hljs-keyword">var</span> temp
+  <span class="hljs-keyword">var</span> len = arr.length
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> gap = len &gt;&gt; <span class="hljs-number">1</span>; gap &gt; <span class="hljs-number">0</span>; gap = gap &gt;&gt;=<span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = gap; i &lt; len; i++) {
+      temp = arr[i]
+      <span class="hljs-keyword">for</span>( j = i - gap; j &gt;=<span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; temp; j -= gap) {
+        arr[j + gap] = arr[j]
+      }
+      arr[j + gap] = temp
+    }
+    <span class="hljs-built_in">console</span>.log(arr)
+  }
+}
+
+<span class="hljs-keyword">var</span> arr = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>]
+shellSort(arr)
+<span class="hljs-built_in">console</span>.log(arr)
+</code></pre>
+<h2 id="&#x6548;&#x7387;&#x6D4B;&#x8BD5;">&#x6548;&#x7387;&#x6D4B;&#x8BD5;</h2>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6D4B;&#x8BD5;&#x6392;&#x5E8F;&#x6027;&#x80FD;&#x3002;&#x4EE5;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;randomArr &#x51FD;&#x6570;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;&#x7EC4;&#xFF0C; &#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x9ED8;&#x8BA4;&#x662F;100&#xFF0C; &#x6700;&#x5927;&#x503C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;1000&#x3002;
+console.time &#x548C; console.end &#x7528;&#x6765;&#x8BB0;&#x5F55;&#x6392;&#x5E8F;&#x65F6;&#x95F4;&#x3002;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> arr = randomArr(<span class="hljs-number">10000</span>, <span class="hljs-number">100</span>)
+<span class="hljs-built_in">console</span>.time(<span class="hljs-string">&apos;shellSort&apos;</span>)
+shellSort(arr)
+<span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">&apos;shellSort&apos;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomArr</span>(<span class="hljs-params"> arrLen = 100, maxValue = 1000 </span>) </span>{
+  <span class="hljs-keyword">let</span> arr = []
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arrLen; i++) {
+    arr[i] = <span class="hljs-built_in">Math</span>.floor((maxValue+<span class="hljs-number">1</span>)*<span class="hljs-built_in">Math</span>.random())
+  }
+  <span class="hljs-keyword">return</span> arr
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shellSort</span>(<span class="hljs-params">arr</span>) </span>{
+  <span class="hljs-keyword">var</span> temp
+  <span class="hljs-keyword">var</span> len = arr.length
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> gap = len &gt;&gt; <span class="hljs-number">1</span>; gap &gt; <span class="hljs-number">0</span>; gap = gap &gt;&gt;=<span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = gap; i &lt; len; i++) {
+      temp = arr[i]
+      <span class="hljs-keyword">for</span>( j = i - gap; j &gt;=<span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; temp; j -= gap) {
+        arr[j + gap] = arr[j]
+      }
+      arr[j + gap] = temp
+    }
+  }
+}
+</code></pre>
+<p>&#x7ECF;&#x6D4F;&#x89C8;&#x5668;&#x6D4B;&#x8BD5;&#xFF0C;&#x5BF9;&#x4E8E;&#x957F;&#x5EA6;&#x4E3A;10000&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6392;&#x5E8F;&#x7EA6;&#x9700;&#x8981;2ms(100&#x6B21;&#x5E73;&#x5747;&#x503C;)&#xFF0C; &#x5BF9;&#x4E8E;&#x957F;&#x5EA6;&#x4E3A;100000&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6392;&#x5E8F;&#x7EA6;&#x9700;&#x8981;
+23.76ms(100&#x6B21;&#x5E73;&#x5747;&#x503C;)&#x3002;</p>
+<h2 id="&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;">&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;</h2>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A; O(nlog<sub>2</sub>n)</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="insertion-sort.html" class="navigation navigation-prev " aria-label="Previous page: 插入排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="merge-sort.html" class="navigation navigation-next " aria-label="Next page: 归并排序">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"希尔排序","level":"1.2.4","depth":2,"next":{"title":"归并排序","level":"1.2.5","depth":2,"path":"sort-algorithm/merge-sort.md","ref":"sort-algorithm/merge-sort.md","articles":[]},"previous":{"title":"插入排序","level":"1.2.3","depth":2,"path":"sort-algorithm/insertion-sort.md","ref":"sort-algorithm/insertion-sort.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs-2","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/jirengu/algorithm-you-should-know/tree/master/docs"},"github":{"url":"https://github.com/jirengu/algorithm-you-should-know/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-vuejs-2":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"algorithm you should know","language":"zh-cn","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"sort-algorithm/shell-sort.md","mtime":"2018-09-12T04:19:27.749Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-10-25T07:47:58.898Z"},"basePath":"..","book":{"language":"zh-cn"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
